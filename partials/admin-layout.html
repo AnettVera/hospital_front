@@ -1,0 +1,82 @@
+<aside class="sidebar" role="navigation" aria-label="Admin sidebar">
+  <div class="d-flex align-items-center">
+    <img src="/img/logo.jpeg" class="sidebar-logo" alt="Logo" />
+    <span class="sidebar-title">Hospital</span>
+  </div>
+
+  <ul class="sidebar-menu mt-4">
+    <li>
+      <a
+        class="sidebar-item active"
+        href="/modules/admin/admin.html?view=dashboard"
+        data-view="/modules/admin/dashboard-content.html"
+        data-name="dashboard"
+        role="link"
+        aria-current="page"
+      >
+        <i class="bi bi-speedometer2"></i> Dashboard
+      </a>
+    </li>
+    <li>
+      <a
+        class="sidebar-item"
+        href="/modules/admin/admin.html?view=nourse"
+        data-view="/modules/admin/nourse-content.html"
+        data-name="nourse"
+        role="link"
+      >
+        <i class="bi bi-person-badge"></i> Enfermeros
+      </a>
+    </li>
+    <li>
+      <a
+        class="sidebar-item"
+        href="/modules/admin/admin.html?view=patient"
+        data-view="/modules/admin/patient-content.html"
+        data-name="patient"
+        role="link"
+      >
+        <i class="bi bi-people"></i> Pacientes
+      </a>
+    </li>
+    <li>
+      <a
+        class="sidebar-item"
+        href="/modules/admin/admin.html?view=assignments"
+        data-view="/modules/admin/assignments-content.html"
+        data-name="assignments"
+        role="link"
+      >
+        <i class="bi bi-list-check"></i> Asignaciones
+      </a>
+    </li>
+    <li>
+      <a
+        class="sidebar-item"
+        href="/modules/admin/admin.html?view=rooms"
+        data-view="/modules/admin/rooms-content.html"
+        data-name="rooms"
+        role="link"
+      >
+        <i class="bi bi-door-open"></i> Habitaciones
+      </a>
+    </li>
+  <li>
+      <a
+        class="sidebar-item"
+        href="/modules/admin/admin.html?view=beds"
+        data-view="/modules/admin/beds-content.html"
+        data-name="beds"
+        role="link"
+      >
+        <i class="bi bi-hospital"></i> Camas
+      </a>
+    </li>
+  </ul>
+
+  <div class="logout"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</div>
+</aside>
+
+<main id="admin-main" class="main-content">
+  <!-- Admin content will be injected here -->
+</main>

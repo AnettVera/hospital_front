@@ -1,0 +1,120 @@
+<div class="dashboard-content">
+
+    <!-- Encabezado -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="section-title">Gestión de Pacientes</h2>
+            <p class="section-subtitle">Registre y administre los pacientes del hospital.</p>
+        </div>
+
+        <button class="btn btn-primary btn-register" data-bs-toggle="modal" data-bs-target="#modalPaciente">
+            <i class="bi bi-person-plus me-2"></i> Registrar Paciente
+        </button>
+    </div>
+
+    <!-- Tarjeta Tabla -->
+    <div class="card card-panel p-4">
+        <div class="table-responsive">
+            <table class="table patient-table">
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Cama</th>
+                        <th>Enfermero</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Carlos Ramírez</td>
+                        <td>cama1</td>
+                        <td>enfermero</td>
+                    </tr>
+
+                    <tr class="row-highlight">
+                        <td>Ana García</td>
+                        <td>cama 2</td>
+                        <td>enfermero 2</td>
+                    </tr>
+
+                    <tr>
+                        <td>Luisa Martínez</td>
+                        <td>cama 3</td>
+                        <td>enfermero</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+<!-- MODAL PACIENTE -->
+<div class="modal fade" id="modalPaciente" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content modal-custom">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Registrar Nuevo Paciente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-description">
+                    Complete los siguientes campos para registrar un nuevo paciente en el sistema.
+                </p>
+
+                <form>
+                    <div class="row g-3">
+
+                        <!-- Nombre -->
+                        <div class="col-md-6">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control input-custom" placeholder="Ej: Juan">
+                        </div>
+
+                        <!-- Apellido -->
+                        <div class="col-md-6">
+                            <label class="form-label">Apellido</label>
+                            <input type="text" class="form-control input-custom" placeholder="Ej: Pérez">
+                        </div>
+
+                        <!-- Notas Médicas -->
+                        <div class="col-12">
+                            <label class="form-label">Notas Médicas</label>
+                            <input type="text" class="form-control input-custom" placeholder="Ej: Paciente alérgico a la penicilina...">
+                        </div>
+
+                        <!-- Asignar Cama -->
+                        <div class="col-md-6">
+                            <label class="form-label">Asignar Cama</label>
+                            <select class="form-select input-custom">
+                                <option selected disabled>Seleccione una cama</option>
+                                <option value="1">Cama 1</option>
+                                <option value="2">Cama 2</option>
+                                <option value="3">Cama 3</option>
+                            </select>
+                        </div>
+
+                        <!-- Asignar Enfermero -->
+                        <div class="col-md-6">
+                            <label class="form-label">Asignar Enfermero</label>
+                            <select class="form-select input-custom">
+                                <option selected disabled>Seleccione un enfermero</option>
+                                <option value="1">Enfermero 1</option>
+                                <option value="2">Enfermero 2</option>
+                                <option value="3">Enfermero 3</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-register">Registrar Paciente</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>

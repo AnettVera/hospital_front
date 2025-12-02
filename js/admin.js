@@ -121,7 +121,6 @@
             'assignments': '/modules/admin/assignments-content.html',
             'rooms': '/modules/admin/rooms-content.html',
             'beds': '/modules/admin/beds-content.html'
-
         };
         return map[name] || null;
     }

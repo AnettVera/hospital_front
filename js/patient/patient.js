@@ -1,6 +1,7 @@
 //---------------------------------------------------------
 // VARIABLES Y ELEMENTOS DEL DOM
 //---------------------------------------------------------
+
 const scanScreen = document.getElementById('scanScreen');
 const patientScreen = document.getElementById('patientScreen');
 const btnOpenScan = document.getElementById('btnOpenScan');

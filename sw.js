@@ -2,29 +2,35 @@ const STATIC_CACHE = 'static-v1';
 const DYNAMIC_CACHE = 'dynamic-v1';
 
 const APP_SHELL = [
-    '/',
-    '/img/logo.jpeg',
-    '/css/styles.css',
-    '/css/patient.css',
-    '/css/bootstrap.min.css',
-    '/js/bootstrap.min.js',
-    '/js/bootstrap.bundle.min.js',
-    '/js/app.js',
-    '/js/admin.js',
-    '/js/beds.js',
-    '/js/includes.js',
-    '/js/rooms.js',
-    '/modules/admin/admin.html',
-    '/modules/admin/assignments-content.html',
-    '/modules/admin/beds-content.html',
-    '/modules/admin/dashboard-content.html',
-    '/modules/admin/nourse-content.html',
-    '/modules/admin/patient-content.html',
-    '/modules/admin/rooms-content.html',
-    '/modules/auth/login.html',
-    '/partials/admin-layout.html',
-    '/partials/footer.html',
-    '/partials/head.html',
+    './',
+    './index.html',
+    './img/logo.jpeg',
+    './css/styles.css',
+    './css/patient.css',
+    './css/bootstrap.min.css',
+    './js/bootstrap.min.js',
+    './js/bootstrap.bundle.min.js',
+    './js/app.js',
+    './js/config.js',
+    './js/jsQR.js',
+    './js/admin/adminDashboard.js',
+    './js/admin/admintk.js',
+    './js/admin/beds.js',
+    './js/admin/nourse.js',
+    './js/admin/patient.js',
+    './js/admin/rooms.js',
+    './js/logAuth/auth.js',
+    './js/login/login.js',
+    './js/nourse/nourse.js',
+    './js/patient/patient.js',
+    './modules/admin/dashboard.html',
+    './modules/admin/patient.html',
+    './modules/admin/nourse.html',
+    './modules/admin/assignments.html',
+    './modules/admin/rooms.html',
+    './modules/admin/beds.html',
+    './modules/auth/login.html',
+    './modules/patient/patient.html',
 ];
 
 self.addEventListener('install', (event) => {
@@ -37,7 +43,6 @@ self.addEventListener('install', (event) => {
     if (failed.length) {
       console.warn('[SW] Algunos recursos no se precachearon (continuando):', failed.length);
     }
-    // Activación rápida en primera carga
     self.skipWaiting();
   })());
 });
@@ -56,9 +61,8 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-  if (request.method !== 'GET') return; // Solo cacheamos GET
+  if (request.method !== 'GET') return; 
 
-  // Estrategia: Cache falling back to network
   event.respondWith(
     caches.match(request).then((cached) => {
       if (cached) return cached;
@@ -74,10 +78,8 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() => {
-          // Podrías retornar una página offline personalizada aquí si lo deseas
-          return caches.match('/index.html');
+          return caches.match('./index.html');
         });
     })
   );
 });
-

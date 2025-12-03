@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // 🔹 Redirección según rol
                 if (response.user.role === "admin") {
-                    window.location.href = "/modules/admin/admin.html";
+                    window.location.href = "/modules/admin/dashboard.html";
                 } else if (response.user.role === "nurse") {
                     window.location.href = "/modules/nourse/nourse-content.html";
                 } else {

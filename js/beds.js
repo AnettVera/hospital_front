@@ -3,7 +3,6 @@
 
   // Datos de ejemplo en memoria
   var bedsData = [
-    // { id, roomId, roomName, bedNumber, occupied, qrData }
   ];
 
   var bedModal, qrModal;
@@ -15,7 +14,6 @@
   }
 
   function getRoomsList() {
-    // roomsData podría estar definido por js/rooms.js
     if (Array.isArray(window.roomsData) && window.roomsData.length) {
       return window.roomsData;
     }
@@ -168,8 +166,7 @@
   }
 
   function qrUrlFromData(data) {
-    // Google Chart API para QR (simple, sin dependencias).
-    // Nota: en producción considerar librería local para mayor control/offline.
+
     var enc = encodeURIComponent(data);
     return 'https://chart.googleapis.com/chart?cht=qr&chs=280x280&chl=' + enc + '&choe=UTF-8';
   }

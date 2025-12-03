@@ -7,7 +7,7 @@
             <p class="section-subtitle">Registre y administre los pacientes del hospital.</p>
         </div>
 
-        <button class="btn btn-primary btn-register" data-bs-toggle="modal" data-bs-target="#modalPaciente">
+        <button class="btn btn-register text-white" data-bs-toggle="modal" data-bs-target="#modalPaciente">
             <i class="bi bi-person-plus me-2"></i> Registrar Paciente
         </button>
     </div>
@@ -23,24 +23,8 @@
                         <th>Enfermero</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Carlos Ramírez</td>
-                        <td>cama1</td>
-                        <td>enfermero</td>
-                    </tr>
-
-                    <tr class="row-highlight">
-                        <td>Ana García</td>
-                        <td>cama 2</td>
-                        <td>enfermero 2</td>
-                    </tr>
-
-                    <tr>
-                        <td>Luisa Martínez</td>
-                        <td>cama 3</td>
-                        <td>enfermero</td>
-                    </tr>
+                <tbody id="patient-table-body">
+                    <!-- Rows will be rendered dynamically by /js/admin/patient.js -->
                 </tbody>
             </table>
         </div>
@@ -68,25 +52,25 @@
                         <!-- Nombre -->
                         <div class="col-md-6">
                             <label class="form-label">Nombre</label>
-                            <input type="text" class="form-control input-custom" placeholder="Ej: Juan">
+                            <input id="patient-name" type="text" class="form-control input-custom" placeholder="Ej: Juan">
                         </div>
 
                         <!-- Apellido -->
                         <div class="col-md-6">
                             <label class="form-label">Apellido</label>
-                            <input type="text" class="form-control input-custom" placeholder="Ej: Pérez">
+                            <input id="patient-lastname" type="text" class="form-control input-custom" placeholder="Ej: Pérez">
                         </div>
 
                         <!-- Notas Médicas -->
                         <div class="col-12">
                             <label class="form-label">Notas Médicas</label>
-                            <input type="text" class="form-control input-custom" placeholder="Ej: Paciente alérgico a la penicilina...">
+                            <input id="patient-notes" type="text" class="form-control input-custom" placeholder="Ej: Paciente alérgico a la penicilina...">
                         </div>
 
                         <!-- Asignar Cama -->
                         <div class="col-md-6">
                             <label class="form-label">Asignar Cama</label>
-                            <select class="form-select input-custom">
+                            <select id="patient-bed" class="form-select input-custom">
                                 <option selected disabled>Seleccione una cama</option>
                                 <option value="1">Cama 1</option>
                                 <option value="2">Cama 2</option>
@@ -97,7 +81,7 @@
                         <!-- Asignar Enfermero -->
                         <div class="col-md-6">
                             <label class="form-label">Asignar Enfermero</label>
-                            <select class="form-select input-custom">
+                            <select id="patient-nurse" class="form-select input-custom">
                                 <option selected disabled>Seleccione un enfermero</option>
                                 <option value="1">Enfermero 1</option>
                                 <option value="2">Enfermero 2</option>
@@ -106,11 +90,12 @@
                         </div>
 
                     </div>
+                    <input type="hidden" id="patient-id" value="" />
                 </form>
             </div>
 
             <div class="modal-footer">
-                <button class="btn btn-primary btn-register">Registrar Paciente</button>
+                <button id="save-patient-btn" class="btn btn-register text-white">Registrar Paciente</button>
             </div>
 
         </div>
@@ -119,3 +104,4 @@
 
 </div>
 <script src="/js/admin/admintk.js"></script>
+<script src="/js/admin/patient.js"></script>

@@ -7,7 +7,7 @@
             <p class="section-subtitle">Registre y administre los enfermeros del hospital.</p>
         </div>
 
-        <button class="btn btn-primary btn-register" data-bs-toggle="modal" data-bs-target="#modalEnfermero">
+        <button class="btn btn-register text-white" data-bs-toggle="modal" data-bs-target="#modalEnfermero">
             <i class="bi bi-person-plus me-2"></i> Registrar enfermero
         </button>
     </div>
@@ -20,23 +20,11 @@
                     <tr>
                         <th>Nombre Completo</th>
                         <th>Correo</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Carlos Ramírez</td>
-                        <td>enfermero</td>
-                    </tr>
-
-                    <tr class="row-highlight">
-                        <td>Ana García</td>
-                        <td>enfermero 2</td>
-                    </tr>
-
-                    <tr>
-                        <td>Luisa Martínez</td>
-                        <td>enfermero</td>
-                    </tr>
+                <tbody id="nourse-table-body">
+                    <!-- Los enfermeros se renderizarán aquí -->
                 </tbody>
             </table>
         </div>
@@ -64,26 +52,27 @@
                         <!-- Nombre -->
                         <div class="col-md-6">
                             <label class="form-label">Nombre</label>
-                            <input type="text" class="form-control input-custom" placeholder="Ej: Juan">
+                            <input id="nourse-name" type="text" class="form-control input-custom" placeholder="Ej: Juan">
                         </div>
 
                         <!-- Apellido -->
                         <div class="col-md-6">
                             <label class="form-label">Apellido</label>
-                            <input type="text" class="form-control input-custom" placeholder="Ej: Pérez">
+                            <input id="nourse-lastname" type="text" class="form-control input-custom" placeholder="Ej: Pérez">
                         </div>
 
                          <!-- Correo -->
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label class="form-label">Correo</label>
-                            <input type="email" class="form-control input-custom" placeholder="Ej: Pérez@gmail.com">
+                            <input id="nourse-email" type="email" class="form-control input-custom" placeholder="Ej: perez@gmail.com">
                         </div>
                     </div>
+                    <input type="hidden" id="nourse-id" value="">
                 </form>
             </div>
 
             <div class="modal-footer">
-                <button class="btn btn-primary btn-register">Registrar Enfermero</button>
+                <button id="save-nourse-btn" class="btn btn-register text-white">Registrar Enfermero</button>
             </div>
 
         </div>
@@ -92,3 +81,4 @@
 
 </div>
 <script src="/js/admin/admintk.js"></script>
+<script src="/js/admin/nourse.js"></script>

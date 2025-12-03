@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <div data-include="/partials/head.html"></div>
+    <title>Bienvenido - Hospital</title>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="login-card text-center">
+
+            <img src="/img/logo.jpeg" alt="Logo" class="login-logo">
+
+            <h1 class="login-title">Hospital</h1>
+            <p class="login-subtitle">Seleccione cómo desea ingresar al sistema</p>
+
+            <div class="d-grid gap-3 mt-4">
+                <a href="/modules/patient/patient.html" class="btn btn-primary-custom">Ingresar como paciente</a>
+                <a href="/modules/auth/login.html" class="btn btn-register text-white">Ingresar como personal del hospital</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div data-include="/partials/footer.html"></div>
+
+    <script src="/js/includes.js"></script>
+    <script>
+    (function(){
+        'use strict';
+        // Enhance the two index buttons with a small transition and keyboard support
+        var patientBtn = document.querySelector('a[href="/modules/patient/patient.html"]');
+        var staffBtn = document.querySelector('a[href="/modules/auth/login.html"]');
+
+        function enhance(el, target){
+            if (!el) return;
+            el.setAttribute('role','button');
+            el.setAttribute('tabindex','0');
+            el.addEventListener('click', function(e){
+                e.preventDefault();
+                // subtle visual feedback before navigating
+                document.body.classList.add('page-transition');
+                setTimeout(function(){ window.location.href = target; }, 180);
+            });
+            el.addEventListener('keydown', function(e){
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+            });
+        }
+
+        enhance(patientBtn, '/modules/patient/patient.html');
+        enhance(staffBtn, '/modules/auth/login.html');
+
+        // Inject tiny CSS for the transition so index keeps coherent styles
+        var css = '\nbody.page-transition { transition: opacity .18s ease; opacity: .45; }\n.login-card { transition: transform .18s ease; }\n.login-card.shrink { transform: scale(.995); }\n';
+        var style = document.createElement('style'); style.appendChild(document.createTextNode(css));
+        document.head.appendChild(style);
+    })();
+    </script>
+
+</body>
+</html>

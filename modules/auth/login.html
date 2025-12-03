@@ -3,8 +3,6 @@
 <head>
     <div data-include="/partials/head.html"></div>
     <title>Acceso Personal</title>
-
-
 </head>
 
 <body>
@@ -17,19 +15,19 @@
             <h1 class="login-title">Acceso Personal</h1>
             <p class="login-subtitle">Inicie sesión para acceder al sistema.</p>
 
-            <form>
+            <form id="loginForm">
 
                 <div class="mb-3 text-start">
                     <label class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control custom-input" placeholder="usuario@hospital.com">
+                    <input id="email" type="email" class="form-control custom-input" placeholder="usuario@hospital.com" required>
                 </div>
 
                 <div class="mb-4 text-start">
                     <label class="form-label">Contraseña</label>
-                    <input type="password" class="form-control custom-input" placeholder="••••••••">
+                    <input id="password" type="password" class="form-control custom-input" placeholder="••••••••" required>
                 </div>
 
-                <button class="btn btn-primary-custom">Iniciar sesión</button>
+                <button type="submit" class="btn btn-primary-custom">Iniciar sesión</button>
 
             </form>
 
@@ -39,5 +37,8 @@
     <div data-include="/partials/footer.html"></div>
 
     <script src="/js/includes.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js//login/login.js"></script>
+
 </body>
 </html>

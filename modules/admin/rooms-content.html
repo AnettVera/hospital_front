@@ -3,12 +3,17 @@
     <div>
       <h2 class="section-title">Gestión de Habitaciones</h2>
       <p class="section-subtitle">
-        Registre y administre las habitaciones y areas del hospital.
+        Registre y administre las habitaciones y áreas del hospital.
       </p>
     </div>
-    <button class="btn btn-primary btn-register" data-bs-toggle="modal" data-bs-target="#roomModal">
-      <i class="bi bi-plus-lg"></i> Crear Habitación
-    </button>
+    <div class="d-flex gap-2">
+      <button class="btn btn-primary btn-register" data-bs-toggle="modal" data-bs-target="#roomModal">
+        <i class="bi bi-plus-lg"></i> Crear Habitación
+      </button>
+      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#areaModal">
+        <i class="bi bi-tags"></i> Agregar Área
+      </button>
+    </div>
   </div>
 
   <table class="table">
@@ -24,6 +29,7 @@
     </tbody>
   </table>
 </div>
+
 <!-- Modal Bootstrap: Crear / Editar Habitación -->
 <div class="modal fade" id="roomModal" tabindex="-1" aria-labelledby="roomModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -46,6 +52,14 @@
           <input id="room-beds" type="number" class="form-control" placeholder="Ej: 2">
         </div>
 
+        <div class="mb-3">
+          <label class="form-label">Área</label>
+          <select id="room-area-select" class="form-select">
+            <!-- opciones dinámicas desde rooms.js -->
+          </select>
+          <div class="form-text">Selecciona un área existente. Para crear nuevas áreas usa el botón "Agregar Área".</div>
+        </div>
+
       </div>
 
       <div class="modal-footer">
@@ -57,5 +71,41 @@
     </div>
   </div>
 </div>
-<script src="/js/admin/admintk.js"></script>
 
+<!-- Modal Bootstrap: Gestión de Áreas -->
+<div class="modal fade" id="areaModal" tabindex="-1" aria-labelledby="areaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="areaModalLabel">Gestionar Áreas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="new-area-name" class="form-label">Nueva Área</label>
+          <div class="input-group">
+            <input id="new-area-name" class="form-control" placeholder="Ej: Oncología">
+            <button class="btn btn-primary" type="button" id="new-area-add-btn">
+              Agregar
+            </button>
+          </div>
+          <div class="form-text">Escribe el nombre de un área y presiona Agregar. Las áreas registradas aparecerán abajo.</div>
+        </div>
+        <div class="mb-2 fw-semibold">Áreas registradas</div>
+        <ul class="list-group" id="area-list">
+          <!-- listado dinámico desde rooms.js -->
+        </ul>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="/js/admin/admintk.js"></script>
+<script src="/js/admin/rooms.js"></script>
